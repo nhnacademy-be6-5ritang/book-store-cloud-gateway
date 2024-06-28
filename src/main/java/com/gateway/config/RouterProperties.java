@@ -1,8 +1,9 @@
 package com.gateway.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
 @Getter
@@ -13,9 +14,6 @@ public class RouterProperties {
 
     private String backendUrl;
 
-    private String authPath;
-
-    private String authUrl;
 
     private String couponPath;
 
