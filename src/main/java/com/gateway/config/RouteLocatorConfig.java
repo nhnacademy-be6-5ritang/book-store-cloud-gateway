@@ -26,10 +26,10 @@ public class RouteLocatorConfig {
 
 
         return builder.routes()
-               .route("bookstore-backend",
-
-                       p -> p.path(routerProperties.getBackendPath()).and().uri(routerProperties.getBackendUrl())
-                            )
+               // .route("bookstore-backend",
+               //
+               //         p -> p.path(routerProperties.getBackendPath()).and().uri(routerProperties.getBackendUrl())
+               //              )
                 .route("bookstore-coupon",
 
                         p -> p.path(routerProperties.getCouponPath()).and().uri(routerProperties.getCouponUrl())
