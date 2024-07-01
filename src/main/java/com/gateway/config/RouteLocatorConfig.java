@@ -12,31 +12,41 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @RequiredArgsConstructor
 public class RouteLocatorConfig {
+    //
+    //
+    // public final RouterProperties routerProperties;
 
-
-    public final RouterProperties routerProperties;
-
+    //
+    //
+    // @Bean
+    // public RouteLocator customRouteLocater(RouteLocatorBuilder builder) {
+    //
+    //
+    //
+    //
+    //
+    //     return builder.routes()
+    //            .route("bookstore-backend",
+    //
+    //                    p -> p.path(routerProperties.getBackendPath()).and().uri(routerProperties.getBackendUrl())
+    //                         )
+    //             .route("bookstore-coupon",
+    //
+    //                     p -> p.path(routerProperties.getCouponPath()).and().uri(routerProperties.getCouponUrl())
+    //             )
+    //             .build();
+    //
+    //
+    // }
 
 
     @Bean
-    public RouteLocator customRouteLocater(RouteLocatorBuilder builder) {
-
-
-
-
-
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-               // .route("bookstore-backend",
-               //
-               //         p -> p.path(routerProperties.getBackendPath()).and().uri(routerProperties.getBackendUrl())
-               //              )
-                .route("bookstore-coupon",
-
-                        p -> p.path(routerProperties.getCouponPath()).and().uri(routerProperties.getCouponUrl())
-                )
-                .build();
-
-
+            .route("bookstore-coupon",
+                p -> p.path("/coupons/**").uri("http://localhost:9494")
+            )
+            .build();
     }
 
 
