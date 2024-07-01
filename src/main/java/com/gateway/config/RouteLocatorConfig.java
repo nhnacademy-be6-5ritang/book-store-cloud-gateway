@@ -44,7 +44,7 @@ public class RouteLocatorConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
             .route("bookstore-coupon",
-                p -> p.path("/coupons/**").uri("http://localhost:9494")
+                p -> p.path("/coupons/**").uri("http://localhost:8081")
             )
             .build();
     }
