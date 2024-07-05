@@ -24,6 +24,9 @@ public class RouteLocatorConfig {
             .route("bookstore-back",
                 p -> p.path("/api/**").uri("lb://BOOK-STORE-BACK")
             )
+            .route("bookstore-account",
+                p -> p.path("/auth/**").uri("lb://BOOK-STORE-ACCOUNT")
+            )
             .build();
     }
 
