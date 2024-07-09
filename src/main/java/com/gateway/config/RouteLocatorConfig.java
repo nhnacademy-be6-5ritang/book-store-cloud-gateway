@@ -19,13 +19,13 @@ public class RouteLocatorConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
             .route("bookstore-coupon",
-                p -> p.path("/coupons/**").uri("lb://BOOK-STORE-COUPON")
+                p -> p.path("/coupons/**").uri("http://localhost:9494")
             )
             .route("bookstore-back",
-                p -> p.path("/api/**").uri("lb://BOOK-STORE-BACK")
+                p -> p.path("/api/**").uri("http://localhost:8083")
             )
             .route("bookstore-account",
-                p -> p.path("/auth/**").uri("lb://BOOK-STORE-ACCOUNT")
+                p -> p.path("/auth/**").uri("http://localhost:8070")
             )
             .build();
     }
