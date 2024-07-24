@@ -1,0 +1,30 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: book-store-cloud-gateway
+
+  profiles:
+    active: dev
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  file:
+    path: ./logs
+
+  level:
+    com.netflix.discovery: ERROR
+    com.netflix.eureka: ERROR
