@@ -19,7 +19,7 @@ public class Resilience4jConfig {
 		CircuitBreakerConfig config = CircuitBreakerConfig.custom()
 			.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED)
 			.slidingWindowSize(10)                              // 통계건수
-			.minimumNumberOfCalls(2)                            // 최소요청횟수
+			.minimumNumberOfCalls(5)                            // 최소요청횟수
 			.failureRateThreshold(60)                           // 실패율
 			.waitDurationInOpenState(Duration.ofSeconds(10))    // Circuit Breaker 유지시간
 			.build();
