@@ -8,14 +8,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
-import lombok.RequiredArgsConstructor;
 
 /**
  * @author 이경헌
  * Resilience4j 서킷 브레이커를 설정하는 구성 클래스입니다.
  */
 @Configuration
-@RequiredArgsConstructor
 public class Resilience4jConfig {
 	/**
 	 * 사용자 지정 서킷 브레이커 설정을 구성합니다.
@@ -26,9 +24,9 @@ public class Resilience4jConfig {
 	public Customizer<ReactiveResilience4JCircuitBreakerFactory> circuitBreakerFactoryCustomizer() {
 		CircuitBreakerConfig config = CircuitBreakerConfig.custom()
 			.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED)
-			.slidingWindowSize(10)                              // 통계건수
-			.minimumNumberOfCalls(5)                            // 최소요청횟수
-			.failureRateThreshold(60)                           // 실패율
+			.slidingWindowSize(100)                              // 통계건수
+			.minimumNumberOfCalls(10)                            // 최소요청횟수
+			.failureRateThreshold(100)                           // 실패율
 			.waitDurationInOpenState(Duration.ofSeconds(10))    // Circuit Breaker 유지시간
 			.build();
 		return factory -> factory.configure(builder -> builder.circuitBreakerConfig(config)

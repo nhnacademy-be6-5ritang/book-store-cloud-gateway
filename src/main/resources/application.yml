@@ -8,12 +8,19 @@ spring:
   profiles:
     active: dev
 
+  cloud:
+    loadbalancer:
+      cache:
+        ttl: 1s
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://admin:1234@localhost:8761/eureka
+    registry-fetch-interval-seconds: 1
+    disable-delta: true
   instance:
     prefer-ip-address: true
 
