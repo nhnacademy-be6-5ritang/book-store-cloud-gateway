@@ -19,7 +19,7 @@ public class RouteLocatorConfig {
 			.route("bookstore-back", r -> r.path("/api/**")
 				.filters(f -> f.circuitBreaker(c -> c.setName("backCircuitBreaker")
 					.setFallbackUri("forward:/fallback/api")))
-				.uri("http://localhost:8083")
+				.uri("lb://BOOK-STORE-BACK")
 			)
 			.route("bookstore-account", r -> r.path("/auth/**")
 				.filters(f -> f.circuitBreaker(c -> c.setName("accountCircuitBreaker")
