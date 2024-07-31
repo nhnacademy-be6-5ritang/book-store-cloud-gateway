@@ -1,9 +1,0 @@
-# Bookstore Backend Configuration
-# bookstore:
-#   backend-path: /back/**
-#   backend-url: http://localhost:8083
-
-# Bookstore Coupon Configuration
-# bookstore:
-#   coupon-path: /coupons/**
-#   coupon-url: http://localhost:9494
