@@ -15,7 +15,7 @@ public class RouteLocatorConfig {
 				.uri("http://localhost:9494")
 			)
 			.route("bookstore-back", r -> r.path("/api/**")
-				.uri("lb://BOOK-STORE-BACK")
+				.uri("lb://book-store-back")
 			)
 			.route("bookstore-account", r -> r.path("/auth/**")
 				.uri("http://localhost:8070")
