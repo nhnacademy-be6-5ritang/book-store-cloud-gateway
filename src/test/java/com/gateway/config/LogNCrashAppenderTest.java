@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 
-public class LogNCrashAppenderTest {
+class LogNCrashAppenderTest {
 
 	@Mock
 	private RestTemplate restTemplate;
@@ -29,7 +29,7 @@ public class LogNCrashAppenderTest {
 	private LogNCrashAppender logNCrashAppender;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		MockitoAnnotations.openMocks(this);
 
 		// Create a LoggerContext
@@ -39,7 +39,7 @@ public class LogNCrashAppenderTest {
 	}
 
 	@Test
-	public void testAppend() {
+	void testAppend() {
 		ILoggingEvent loggingEvent = mock(ILoggingEvent.class);
 
 		when(loggingEvent.getFormattedMessage()).thenReturn("Test log message");
