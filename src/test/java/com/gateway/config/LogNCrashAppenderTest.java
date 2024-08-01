@@ -29,7 +29,7 @@ public class LogNCrashAppenderTest {
 	private LogNCrashAppender logNCrashAppender;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		MockitoAnnotations.openMocks(this);
 
 		// Create a LoggerContext
@@ -39,7 +39,7 @@ public class LogNCrashAppenderTest {
 	}
 
 	@Test
-	public void testAppend() {
+	void testAppend() {
 		ILoggingEvent loggingEvent = mock(ILoggingEvent.class);
 
 		when(loggingEvent.getFormattedMessage()).thenReturn("Test log message");
