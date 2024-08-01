@@ -1,5 +1,7 @@
 package com.gateway;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BookStoreCloudGatewayApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void mainMethodTest() {
+		assertDoesNotThrow(() -> {
+			BookStoreCloudGatewayApplication.main(new String[]{});
+		});
 	}
 
 }
