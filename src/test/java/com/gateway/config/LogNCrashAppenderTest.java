@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 
-public class LogNCrashAppenderTest {
+class LogNCrashAppenderTest {
 
 	@Mock
 	private RestTemplate restTemplate;
